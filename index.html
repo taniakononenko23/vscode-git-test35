@@ -10,53 +10,62 @@
       crossorigin="anonymous"
     />
     <style>
-      * {
-        box-sizing: border-box;
-      }
       .dropdown {
         position: relative;
-        margin: 16px;
-        background-color: darkgreen;
-        color: white;
         display: inline-block;
-        font-size: 16px;
-        height: 34px;
-        cursor: pointer;
+        margin: 16px;
+      }
+
+      .menu-button {
+        display: block;
+        background-color: darkgreen;
         opacity: 0.8;
+        color: white;
         padding: 16px;
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
       }
-      .dropdown:hover {
-        opacity: 1;
-      }
-      .dropdown_list {
-        position: absolute;
-        top: 34px;
-        color: black;
-        list-style-type: none;
-        background-color: lightcyan;
+
+      .menu-list {
         padding: 0;
         margin: 0;
         display: none;
+        position: absolute;
+        background-color: lightcyan;
         min-width: 120px;
-        z-index: 1;
         box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
       }
-      .dropdown_list-item {
-        margin: 16px;
-      }
-      .dropdown:hover .dropdown_list {
+
+      .menu-item {
+        color: black;
+        padding: 16px;
+        text-decoration: none;
         display: block;
+      }
+
+      .menu-item:hover {
+        background-color: ghostwhite;
+      }
+
+      .dropdown:hover .menu-list {
+        display: block;
+      }
+
+      .dropdown:hover .menu-button {
+        opacity: 1;
       }
     </style>
   </head>
 
   <body>
     <div class="dropdown">
-      <span class="dropdown_text">Hover me</span>
-      <ul class="dropdown_list">
-        <li class="dropdown_list-item">Cars</li>
-        <li class="dropdown_list-item">Planes</li>
-        <li class="dropdown_list-item">Ships</li>
+      <span class="menu-button">Hover me</span>
+      <ul class="menu-list">
+        <li class="menu-item">Cars</li>
+        <li class="menu-item">Planes</li>
+        <li class="menu-item">Ships</li>
       </ul>
     </div>
   </body>
